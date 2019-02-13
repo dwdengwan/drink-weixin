@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/list/list",
+    "pages/index/index",
+    "pages/goshopping/goshopping",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#e1263f",
+    "navigationBarTitleText": "酒味醇香",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/image/tabs/home.png",
+        "selectedIconPath": "pages/image/tabs/home-active.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "消息",
+        "iconPath": "pages/image/tabs/message.png",
+        "selectedIconPath": "pages/image/tabs/message-active.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的",
+        "iconPath": "pages/image/tabs/profile.png",
+        "selectedIconPath": "pages/image/tabs/profile-active.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "联系我",
+        "iconPath": "pages/image/tabs/contact.png",
+        "selectedIconPath": "pages/image/tabs/contact-active.png"
+      }
+    ]
+  }
+}

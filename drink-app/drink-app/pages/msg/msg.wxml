@@ -1,0 +1,11 @@
+<!--pages/msg/msg.wxml-->
+<view>
+  <view class="card" wx:for="{{list}}" wx:key="index" bindtap='moveTo' data-id="{{item.id}}">
+    <!-- <view class="divider"></view> -->
+    <view class="title">{{item.title}}</view>
+    <view class="time">{{item.dtime}}</view>
+    <image lazy-load='true' mode='aspectFill' src="{{item.img}}"></image>
+    <view class="kh">{{item.dtitle}}</view>
+    <view class="ckxq" class="arrow">查看详情</view>
+  </view>
+</view>

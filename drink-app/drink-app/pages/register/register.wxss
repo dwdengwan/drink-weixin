@@ -1,0 +1,27 @@
+/* pages/register/register.wxss */
+.card{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  font-size:40rpx;
+  font-weight: bolder;
+  padding:20rpx 20rpx;
+}
+.card input{
+  margin-top:20rpx;
+  height: 50rpx;
+  /* border: 1rpx solid red; */
+}
+.card .vv{
+  height: 40rpx;
+  width: 100%;
+}
+.card .dd{
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size:30rpx;
+  color:red;
+}
+.card button{
+  width: 100%;
+}

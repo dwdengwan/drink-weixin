@@ -1,0 +1,30 @@
+/* pages/myvip/myvip.wxss */
+page{
+  background: #e1e1e1;
+}
+.card{
+  background:#fff;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+}
+.card .card-image{
+  background: #e1263f;
+  width: 100%;
+  height: 400rpx;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.card image{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+}
+.card .item{
+  padding-left: 20rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #ddd;
+}

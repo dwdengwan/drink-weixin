@@ -1,0 +1,28 @@
+/**app.wxss**/
+/*全局通用 截取超长字符串*/
+.ell{
+  overflow: hidden;/*超出部分隐藏*/
+  white-space: nowrap;/*不允许换行*/
+  text-overflow: ellipsis;/*超出部分用...代替*/
+}
+/* 功能三 分割块 */
+.divider{
+  width: 100%;
+  height: 20rpx;
+  background:#f1f1f1;
+}
+/*功能四 通用箭头*/
+.arrow{
+  display: flex;
+  justify-content: space-between;/*水平居中*/
+  align-items: center;/*垂直居中*/
+}
+.arrow::after{
+  margin-right:20rpx;
+  content: "";
+  width:15rpx;
+  height:15rpx;
+  border-top:3rpx solid #999;/*箭头边框 top*/
+  border-right:3rpx solid #999;/*箭头边框 right*/
+  transform:rotate(45deg);/*旋转45度*/
+}

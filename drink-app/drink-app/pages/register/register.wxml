@@ -1,0 +1,14 @@
+<!--pages/register/register.wxml-->
+<view class="card">
+  <text>手机号:</text><text class="dd">{{msg1}}</text><input placeholder='请输入手机号' bindblur='uphone'></input>
+  <view class="vv"></view>
+  <text>密码：</text><text class="dd">{{msg2}}</text><input placeholder='请输入密码' bindblur="upwd" type="password"></input>
+  <view class="vv"></view>
+  <text>确认密码:</text><text class="dd">{{msg3}}</text><input placeholder='请再次输入密码' bindblur="upwd2" type="password"></input>
+  <view class="vv"></view>
+  <text>昵称:</text>
+  <view class="vv"></view>
+  <input placeholder='请输入昵称' bindblur="uname"></input>
+  <view class="vv"></view>
+  <button bindtap="login">注册</button>
+</view>

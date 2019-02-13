@@ -1,0 +1,33 @@
+/* pages/distails/distails.wxss */
+page{
+  background:#ddd;
+}
+.card{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  background:#fff;
+  padding: 20rpx 10rpx;
+  margin:10rpx 20rpx;
+}
+.card .title{
+  font-size:20px;
+}
+.card image{
+  width: 700rpx;
+}
+.card .dponit0{
+  position: relative;
+  width: 150rpx;
+  height: 45rpx;
+}
+.card .dponit1, .card .dponit2{
+  position: absolute;
+  top:0;left:0;
+}
+.card .dponit2{
+  /* position: absolute; */
+  overflow: hidden;
+  color:red;
+  /* margin-top:-50rpx; */
+}

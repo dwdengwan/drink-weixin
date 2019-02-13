@@ -1,0 +1,53 @@
+<!--pages/list/list.wxml-->
+<view>
+  <!-- 轮播图 -->
+  <swiper autoplay='true' indicator-dots="true" vertical="true" class="slider">
+    <swiper-item wx:for="{{list1}}" wx:key="index">
+      <image src="{{item.img_url}}" lazy-load='true' mode='aspectFill'></image>
+    </swiper-item>
+  </swiper>
+  <!--分割块 -->
+  <view class="divider"></view>
+  <!-- 两瓶大酒 -->
+  <view class="onefloor">
+    <view class="child" wx:for="{{list2}}" wx:key="index">
+      <text class="sp1">{{item.title1}}</text>
+      <text class="sp2">{{item.title2}}</text>
+      <image class="img1" lazy-load='true' mode='aspectFill' src="{{item.img_url}}"></image>
+    </view>
+  </view>
+  <view class="divider"></view>
+  <!-- 十瓶小酒 二楼 -->
+  <view class="secondfloor">
+    <view class="child" wx:for="{{list3}}" wx:key="index">
+      <image lazy-load='true' mode='aspectFill' src="{{item.img}}"></image>
+      <view class='sp'>{{item.title}}</view>
+    </view>
+  </view>
+   <view class="divider"></view>
+   <view class="xstop">销售排行榜--top--</view>
+   <!-- 三楼 可行向滑动 -->
+   <view class="thiredfloor">
+    <view class="child" wx:for="{{list3}}">
+      <image src="{{item.img}}"></image>
+      <text class="title">{{item.title}}</text>
+      <text class="price">￥{{item.price}}</text>
+    </view>
+   </view>
+  <view class="divider"></view>
+  <!-- 轮播图 -->
+  <swiper autoplay='true'  class="lunbo">
+    <swiper-item wx:for="{{list1}}" wx:key="index">
+      <image src="{{item.img_url}}" lazy-load='true' mode='aspectFill'></image>
+    </swiper-item>
+  </swiper>
+  <view class="divider"></view>
+  <!-- 四楼 列表 -->
+  <view class="fourthfloor">
+    <view class="child" wx:for="{{list3}}" wx:key="index">
+      <image src="{{item.img}}"></image>
+      <text class="sp1">{{item.title}}</text>
+      <text class="sp2">￥{{item.price}}</text>
+    </view>
+  </view>
+</view>

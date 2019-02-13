@@ -1,0 +1,31 @@
+{
+  "usingComponents": {},
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/list/list",
+        "text": "首页",
+        "iconPath": "pages/image/tabs/home.png",
+        "selectedIconPath": "pages/image/tabs/home-active.png"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "text": "消息",
+        "iconPath": "pages/image/tabs/message.png",
+        "selectedIconPath": "pages/image/tabs/message-active.png"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "text": "我的",
+        "iconPath": "pages/image/tabs/profile.png",
+        "selectedIconPath": "pages/image/tabs/profile-active.png"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "text": "联系我",
+        "iconPath": "pages/image/tabs/contact.png",
+        "selectedIconPath": "pages/image/tabs/contact-active.png"
+      }
+    ]
+  }
+}

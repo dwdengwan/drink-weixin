@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/register/register",
+    "pages/distails/distails",
+    "pages/msg/msg",
+    "pages/list/list",
+    "pages/goshopping/goshopping",
+    "pages/logs/logs",
+    "pages/wechat/wechat",
+    "pages/myvip/myvip",
+    "pages/login/login"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#e1263f",
+    "navigationBarTitleText": "酒味醇香",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/image/tabs/home.png",
+        "selectedIconPath": "pages/image/tabs/home-active.png"
+      },
+      {
+        "pagePath": "pages/msg/msg",
+        "text": "消息",
+        "iconPath": "pages/image/tabs/message.png",
+        "selectedIconPath": "pages/image/tabs/message-active.png"
+      },
+      {
+        "pagePath": "pages/myvip/myvip",
+        "text": "我的",
+        "iconPath": "pages/image/tabs/profile.png",
+        "selectedIconPath": "pages/image/tabs/profile-active.png"
+      },
+      {
+        "pagePath": "pages/wechat/wechat",
+        "text": "联系我",
+        "iconPath": "pages/image/tabs/contact.png",
+        "selectedIconPath": "pages/image/tabs/contact-active.png"
+      }
+    ]
+  }
+}

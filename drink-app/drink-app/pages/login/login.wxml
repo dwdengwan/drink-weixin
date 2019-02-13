@@ -1,0 +1,11 @@
+<!--pages/login/login.wxml-->
+<view class="card">
+  <text class="phone">手机号:</text>
+  <view class="vid">{{msg1}}</view>
+  <input placeholder='请输入手机号' bindblur="uphone"></input>
+  <view class="vid"></view>
+  <text class="phone">密码:</text>
+  <view class="vid">{{msg2}}</view>
+  <input placeholder='请输入密码' type='password' bindblur="upwd"></input>
+  <button bindtap='login'>登录</button>
+</view>

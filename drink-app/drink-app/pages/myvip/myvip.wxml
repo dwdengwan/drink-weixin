@@ -1,0 +1,17 @@
+<!--pages/myvip/myvip.wxml-->
+<view class="card">
+  <view class="card-image">
+    <image lazy-load='true' mode=' arrowascpectFill' src="../image/icons/avatar.png"></image>
+  </view>
+  <view>
+    <view class="item arrow" bindtap='login'>登录会员</view>
+    <view class="item arrow" bindtap='register'>注册会员</view>
+    <view class="divider"></view>
+    <view class="item arrow">个人资料</view>
+    <view class="item arrow">我的优惠券</view>
+    <view class="item arrow">常见问题</view>
+    <view class="item arrow">使用条款</view>
+    <view class="divider"></view>
+    <view class="item arrow">设置</view>
+  </view>
+</view>

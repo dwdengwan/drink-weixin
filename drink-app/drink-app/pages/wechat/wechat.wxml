@@ -1,0 +1,8 @@
+<!--pages/wechat/wechat.wxml-->
+<view>
+  <text>想做智能机器人聊天</text>
+  <form>
+    <input placeholder='请输入您想问的问题'></input>
+    <input type='submit'></input>
+  </form> 
+</view>

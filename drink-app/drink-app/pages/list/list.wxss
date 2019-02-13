@@ -1,0 +1,130 @@
+/* pages/list/list.wxss */
+pages{
+  background: #fff;
+}
+/*  轮播图 */
+.slider,.slider swiper,.slider image{
+  height: 400rpx;
+  width: 100%;
+}
+indicator-dots{
+  background:pink;
+}
+/* 分割块 */
+.divider{
+  width: 100%;
+  height: 20rpx;
+  background:#f1f1f1;
+}
+/* 一楼 */
+.onefloor{
+  display: flex;
+  flex-flow:row nowrap;
+  justify-content: space-between;
+}
+.onefloor .child{
+  width: 50%;
+  /* height: 600rpx; */
+  display: flex;
+  flex-flow:column nowrap;
+  justify-content: flex-start;
+  border: 1px solid #eee;
+}
+.onefloor .child .sp1{
+  font-size: 14px;
+  text-align: center;
+}
+.onefloor .child .sp2{
+  font-size:14px;
+  text-align: center;
+  color:#999;
+}
+.onefloor .child image{
+  margin-left:100rpx;
+  width: 150rpx;
+  height: 200rpx;
+}
+/* 二楼 */
+.secondfloor{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.secondfloor .child{
+  width: 20%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  border:1px solid #ddd;
+  box-sizing: border-box;
+}
+.secondfloor .child image{
+  width: 70rpx;
+  height: 100rpx;
+  margin-left:30rpx;
+}
+.secondfloor .child .sp{
+  font-size: 12px;
+  text-align: center;
+  color:#999;
+}
+/* 销售排行榜 */
+.xstop{
+  width: 100%;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+}
+/* 三楼 可行向滑动 */
+.thiredfloor{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+.thiredfloor .child{
+  text-align: center;
+  width: 40%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  border: 1px solid #ddd;
+}
+.thiredfloor .child image{
+  width:300rpx;
+  height: 400rpx;
+}
+.thiredfloor .child .title{
+  font-size: 14px;
+}
+/* 四楼 轮播 */
+.lunbo{
+  height: 200rpx;
+}
+.lunbo image{
+  height: 200rpx;
+  width: 750rpx;
+}
+/* 五楼 列表 */
+.fourthfloor{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.fourthfloor .child{
+  width: 50%;
+  display: flex;
+  flex-flow:column nowrap;
+  justify-content: flex-start;
+  border:1px solid #eee;
+  box-sizing: border-box;
+  text-align: center;
+}
+.fourthfloor .child image{
+  width: 150rpx;
+  height: 200rpx;
+  margin-left:100rpx;
+}
+/* 返回首页 */
+.goto{
+  text-align: center;
+}

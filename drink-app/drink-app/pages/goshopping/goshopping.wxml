@@ -1,0 +1,23 @@
+<!--pages/goshopping/goshopping.wxml-->
+<view>
+   <!-- 轮播图 -->
+  <swiper autoplay='true' indicator-dots="true" vertical="true" class="slider">
+    <swiper-item wx:for="{{list1}}" wx:key="index">
+      <image src="{{item.img}}" lazy-load='true' mode='aspectFill'></image>
+    </swiper-item>
+  </swiper>
+  <view class="divider"></view>
+  <view class="new">--新品预定--</view>
+  <view class="divider"></view>
+  <form>
+    <text>*姓名:</text>
+    <input placeholder='请输入姓名' type="text"></input>
+    <text>*电话:</text> 
+    <input type='text' placeholder="请输入手机号码"></input>
+    <text>*数量:</text> 
+    <input type="text" placeholder='请输入数量'></input>
+    <text>*留言:</text> 
+    <input type="text" placeholder='请输入留言' class="ly"></input>
+    <button>马上提交</button>
+  </form>
+</view>

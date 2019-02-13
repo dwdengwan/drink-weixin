@@ -1,0 +1,15 @@
+<!--pages/distails/distails.wxml-->
+<view>
+  <view wx:for="{{list}}" wx:key="index" class="card">
+    <view class="title">{{item.title}}</view>
+    <image lazy-load='true' mode="ascpectFill" src="{{item.img}}"></image>
+    <view class="phone">联系方式{{item.phone}}</view>
+    <view class="addr">地址: {{item.addr}}</view>
+    <view class="dtime">营业时间: {{item.dtime}}</view>
+    <view class="dponit">评分:</view>
+    <view class="dponit0">
+      <view class="dponit1">☆☆☆☆☆</view>
+      <view class="dponit2" style="width:{{item.dpoint}}">★★★★★</view>
+    </view>  
+  </view>
+</view>

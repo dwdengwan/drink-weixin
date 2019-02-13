@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="index-container">
+  <!-- 1.轮播图 -->
+  <swiper autoplay='true' indicator-dots="true" vertical="true" class="slider">
+    <swiper-item wx:for="{{list1}}" wx:key="index">
+      <image src="{{item.img_url}}" lazy-load='true' mode='aspectFill'></image>
+    </swiper-item>
+  </swiper>
+  <!-- 2.九宫格 -->
+  <view class="index-nav">
+    <view wx:for="{{list}}" wx:key="id" class="nav-item" bindtap='moveTo' data-id="{{item.id}}">
+      <image lazy-load='true' src="{{item.img_url}}"></image>
+      <text>{{item.title}}</text>
+    </view>
+  </view>
+  <!-- 4.分割块 -->
+  <view class="divider"></view>
+  <!-- 3.按钮 --> 
+  <view class="index-enter">
+    <navigator class="enter-item" wx:for="{{list2}}" wx:key="id">
+      <image lazy-load='true' mode='aspectFill' src='{{item.img_url}}'></image>
+    </navigator>
+  </view>
+</view>
