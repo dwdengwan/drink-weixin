@@ -5,7 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    img_url:"../image/icons/avatar.png",
+    // img_url:"http://tmp/wx3d85b663e5168f59.o6zAJs2loV2cWPsfLlyvsIlASfQA.w9AXKjMomtAwe19a296c676e98d5b85dc6d13ef63067.jpg",
+  },
+  uploadAvator: function () {
+    // 上传头像
+    // 1.选择单张图片
+    wx.chooseImage({
+      count: 3,//最多选中一张
+      sourceType: ["camera", "album"],//图片来源 相机 相册
+      success:  res=>{
+        console.log(res.tempFilePaths[0]);
+        this.setData({
+          img_url:res.tempFilePaths[0],
+        })
+      },
+    })
   },
   login(){
     wx.navigateTo({

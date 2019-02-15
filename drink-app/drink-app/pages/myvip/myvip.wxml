@@ -1,7 +1,7 @@
 <!--pages/myvip/myvip.wxml-->
 <view class="card">
   <view class="card-image">
-    <image lazy-load='true' mode=' arrowascpectFill' src="../image/icons/avatar.png"></image>
+    <image lazy-load='true' mode=' arrowascpectFill' src="{{img_url}}" bindtap='uploadAvator'></image>
   </view>
   <view>
     <view class="item arrow" bindtap='login'>登录会员</view>

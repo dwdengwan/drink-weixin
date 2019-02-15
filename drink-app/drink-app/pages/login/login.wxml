@@ -2,10 +2,10 @@
 <view class="card">
   <text class="phone">手机号:</text>
   <view class="vid">{{msg1}}</view>
-  <input placeholder='请输入手机号' bindblur="uphone"></input>
+  <input placeholder='请输入手机号' bindblur="uphone" value='15566778899'></input>
   <view class="vid"></view>
   <text class="phone">密码:</text>
   <view class="vid">{{msg2}}</view>
-  <input placeholder='请输入密码' type='password' bindblur="upwd"></input>
+  <input placeholder='请输入密码' type='password' bindblur="upwd" value='abc123456'></input>
   <button bindtap='login'>登录</button>
 </view>

@@ -11,7 +11,7 @@ Page({
     upwd:"",
   },
   uphone(e){
-    var uphone=e.detail.value;
+    var uphone=parseInt(e.detail.value);
     var reg=/^1[3-8]\d{9}$/;
     if(!reg.test(uphone)){
       this.setData({
@@ -39,9 +39,13 @@ Page({
     }
   },
   login(){
+    console.log(this.data.uphone);
+    console.log(this.data.upwd)
+    // console.log(e);
     var bool1=this.data.msg1==""&&this.data.msg2=="";
     var bool2=this.data.upwd!==""&&this.data.uphone!=="";
     var bool=bool1&&bool2;
+    console.log(bool);
     if(bool){
       var url ="http://127.0.0.1:3000/getLogin";
       wx.request({
@@ -82,7 +86,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // this.uphone();
+    // this.upwd();
   },
 
   /**
