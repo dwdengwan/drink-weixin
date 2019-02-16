@@ -137,6 +137,43 @@ app.get("/getTflist",(req,res)=>{
   })
 })
 
+//list页面 FourFloor listFF_list
+app.get("/getFFlist",(req,res)=>{
+  var pno=req.query.pno;
+  var pageSize=req.query.pageSize;
+  if(!pno){
+    pno=1;
+  }
+  if(!pageSize){
+    pageSize=4;
+  }
+  var sql="select count(id) as c from listTf_list";
+  var progress = 0; //sql执行进度
+  obj = {code:1};
+  pool.query(sql,(err,result)=>{
+    if(err)throw err;
+    //pageCount 总页数
+    var pageCount = Math.ceil(result[0].c/pageSize);
+    obj.pageCount = pageCount;
+    progress += 50;
+  if(progress == 100){
+    res.send(obj);
+  }
+});
+//  查询当前页内容
+var sql=" SELECT * FROM listTf_list LIMIT ?,?"
+var offset = parseInt((pno-1)*pageSize);
+pageSize = parseInt(pageSize);
+  pool.query(sql,[offset,pageSize],(err,result)=>{
+    if(err)throw err;
+    obj.data = result;
+    progress+=50;
+    if(progress==100){
+      res.send(obj);
+    }
+  }); 
+})
+
 // 分页查询的msg_list
 app.get("/getMsg",(req,res)=>{
   var pno=req.query.pno;

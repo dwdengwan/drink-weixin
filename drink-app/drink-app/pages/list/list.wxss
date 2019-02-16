@@ -7,6 +7,28 @@ pages{
   height: 400rpx;
   width: 100%;
 }
+.silder1{
+  height: 500rpx;
+  width: 100%;
+}
+.slider1 image{
+  margin-left:225rpx;
+  width: 300rpx;
+  height:300rpx;
+  background:#f1f1f1;
+}
+.slider1-item{
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+}
+.slider1-item .title{
+  color:#000;
+}
+.slider1-item .price{
+  color:red;
+}
 indicator-dots{
   background:pink;
 }

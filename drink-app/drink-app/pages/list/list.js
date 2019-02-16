@@ -31,7 +31,7 @@ Page({
       // { id: 10, img: "../image/index/kk.jpg", title: "清香型", },
     ],
     // 三楼
-    list3: [
+    list4: [
       // { id: 1, img: "../image/index/bj1.jpg", title: "浓香型",price:225 },
       // { id: 2, img: "../image/index/kk.jpg", title: "清香型", price: 225 },
       // { id: 3, img: "../image/index/bj1.jpg", title: "浓香型", price: 285 },
@@ -39,6 +39,11 @@ Page({
       // { id: 5, img: "../image/index/bj1.jpg", title: "浓香型", price: 625 },
       // { id: 6, img: "../image/index/kk.jpg", title: "清香型", price: 195 },
     ],
+    pageCount:1,
+    pno:1,
+    left: false ,//右滑
+    right: false,//左滑
+    activeIndex: 0
   },
   getMore(){
     wx.showLoading({
@@ -98,6 +103,57 @@ Page({
     });
     this.unLoad();
   },
+  getFflist(){
+    var url="http://127.0.0.1:3000/getFFlist";
+    var pno=this.data.pno;
+    wx.showLoading({
+      title:"数据正在加载中...",
+    });
+    wx.request({
+      url:url,
+      data:{
+        pno:pno,
+        pageSize:4,
+      },
+      method:"GET",
+      success:res=>{
+        console.log(res.data);
+        var row=res.data.data;
+        var rows=this.data.list4.concat(row);
+        this.setData({
+          list4:rows,
+          pageCount:res.data.pageCount,
+          pno:pno,
+        })
+      }
+    })
+    this.unLoad();
+    pno++;
+    if(pno>this.data.pageCount){
+      wx.showLoading({
+        title:"数据加载完毕..."
+      })
+    }
+  },
+  changeswiper: function(e) {
+    var index = e.detail.current;//当前所在页面的 index
+    if(index > this.data.activeIndex) {//左滑事件判断
+     this.setData({
+     left: true//若为左滑，left值为true,触发图片动画效果
+     })
+    } else if(index < this.data.activeIndex) {//右滑事件判断
+     this.setData({
+     right: true//若为右滑，right值为true,触发图片动画效果
+     })
+    }
+    setTimeout(() => {//每滑动一次，数据发生变化
+     this.setData({
+     activeIndex: index,
+     left:false,
+     right:false
+     })
+    }, 1000);
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -107,6 +163,7 @@ Page({
     this.getLunbo();
     this.getOflist();
     this.getTflist();
+    this.getFflist();
   },
 
   /**
@@ -141,16 +198,15 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.getLunbo();
-    this.getOflist();
-    this.getTflist();
+    
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.getFflist();
+    console.log(111);
   },
 
   /**
