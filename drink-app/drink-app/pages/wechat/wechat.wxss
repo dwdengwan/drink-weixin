@@ -4,18 +4,20 @@ page{
 }
 .card{
   background: #fff;
-  border: 1rpx solid red;
+  /* border: 1rpx solid red; */
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   text-align: center;
 }
 .card .bgain{
+  margin-top:50rpx;
   height: 100rpx;
   line-height: 100rpx;
   font-size:60rpx;
 }
 .card .num{
+  margin-top:50rpx;
   margin-left:300rpx;
   text-align: center;
   font-size: 50rpx;
@@ -30,5 +32,8 @@ page{
   font-size:40rpx;
   color:red;
   height: 300rpx;
-  line-height: 100rpx;
+  line-height: 300rpx;
+}
+.card .anser1,.card .anser2{
+  font-size: 60rpx;
 }

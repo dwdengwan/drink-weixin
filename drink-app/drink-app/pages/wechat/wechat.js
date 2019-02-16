@@ -7,37 +7,48 @@ Page({
   data: {
     list:[],
     id:0,
-    isBegain:false,
+    isBegain:false,//游戏是否开始
     num:9,
     myColor:"green",
+    myColor1:"#fff",
+    myColor2:'#fff',
+    isRun:true,//定时器是否在运行
   },
   change:function(){
     this.getMore();
     var num=this.data.num;
-    setInterval(()=>{
-      if(num<10&&num>0){
-        num--;
-        if(num>=7){
+    if(this.data.isRun===true){
+      var timer=setInterval(()=>{
+        if(num<10&&num>0){
+          num--;
+          if(num>=7){
+            this.setData({
+              myColor:"green",
+            })
+          }else if(num>=3){
           this.setData({
-            myColor:"green",
+            myColor:"pink",
           })
-        }else if(num>=3){
-         this.setData({
-           myColor:"pink",
-         })
-        }else{
-          this.setData({
-            myColor:"red",
-          })
+          }else{
+            this.setData({
+              myColor:"red",
+            })
+          }
         }
-      }
-      else {
-        num=9
-      }
+        else {
+          num=9
+        }
+        this.setData({
+          num: num,
+        })
+      },1000)
+    }else{
+      clearTimeout(timer);
       this.setData({
-        num: num
+        myColor1: "#fff",
+        myColor2: '#fff',
       })
-    },1000)
+    }
     if(!this.isBegain){
       console.log(this.data.isBegain);
       this.getMore();
@@ -52,29 +63,43 @@ Page({
     }
   },
   getMore:function(){
-    setInterval(()=>{
-    var id=this.data.id;
-    id=parseInt(Math.random()*20+1);
-    // console.log(id);
-    var url ="http://127.0.0.1:3000/getDdxq";
-    wx.request({
-      url: url,
-      data:{id},
-      success:res=>{
-        // console.log(res.data);
-        this.setData({
-          list:res.data,
-          id:id,
-        })
-      }
-    })
-    }, 10000);
+    if(this.data.isRun===true){
+    var timer = setInterval(()=>{
+      var id=this.data.id;
+      id=parseInt(Math.random()*20+1);
+      // console.log(id);
+      var url ="http://127.0.0.1:3000/getDdxq";
+      wx.request({
+        url: url,
+        data:{id},
+        success:res=>{
+          // console.log(res.data);
+          this.setData({
+            list:res.data,
+            id:id,
+          })
+        }
+      })
+      }, 10000);
+    }
   },
-  change1:function(e){
-    console.log(e);
+  change1:function(){
+    console.log(1111);
+    var cc1="red";
+    this.setData({
+      myColor1:cc1,
+      isRun:false,
+    });
+    console.log(this.data.isRun);
   },
-  change2:function(e){
-    console.log(e);
+  change2:function(){
+    console.log(2222);
+    var cc2="green";
+    this.setData({
+      myColor2:cc2,
+      isRun:false,
+    });
+    console.log(this.data.isRun);
   },
   /**
    * 生命周期函数--监听页面加载
