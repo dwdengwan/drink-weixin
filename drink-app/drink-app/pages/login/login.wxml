@@ -5,9 +5,12 @@
   <!-- value='15566778899' -->
   <input placeholder='请输入手机号' bindblur="uphone"></input>
   <view class="vid"></view>
-  <text class="phone">密码:</text>
+  <view>
+    <text class="phone">密码:</text>
+    <text bindtap='see'>{{isSee?"不可见":"可见"}}</text>
+  </view>
   <view class="vid">{{msg2}}</view>
   <!-- value='abc123456' -->
-  <input placeholder='请输入密码' type='password' bindblur="upwd" ></input>
+  <input placeholder='请输入密码' type='{{isSee?"password":"text"}}' bindblur="upwd" ></input>
   <button bindtap='login'>登录</button>
 </view>

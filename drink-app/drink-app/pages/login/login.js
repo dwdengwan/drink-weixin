@@ -9,11 +9,15 @@ Page({
     msg2:"",
     uphone:"",
     upwd:"",
+    isSee:true,//密码是否可见
   },
   uphone(e){
     var uphone=parseInt(e.detail.value);
     var reg=/^1[3-8]\d{9}$/;
-    if(!reg.test(uphone)){
+    if(!uphone){
+      this.setData({msg1:"手机号码不能为空"})
+    }
+    else if(!reg.test(uphone)){
       this.setData({
         msg1:"手机号码不符合规则",
       })
@@ -80,6 +84,15 @@ Page({
           }
         }
       })
+    }
+  },
+  see(){
+    //密码是否可见
+    console.log(111);
+    if(this.data.isSee){
+     this.setData({isSee:false}) 
+    }else{
+      this.setData({isSee:true})
     }
   },
   /**

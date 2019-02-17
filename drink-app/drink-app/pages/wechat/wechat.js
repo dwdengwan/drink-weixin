@@ -5,16 +5,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:[],
+    list:[],//题库
     id:0,
     isBegain:false,//游戏是否开始
-    num:9,
-    myColor:"green",
-    myColor1:"#fff",
-    myColor2:'#fff',
+    num:9,//定时器的数字
+    myColor:"green",//定时器的背景色
+    myColor1:"#fff",//按钮一的背景色
+    myColor2:"#fff",//按钮二的背景色
     isRun:true,//定时器是否在运行
+    answer:"",//正确答案
+    score:0,//分数
   },
   change:function(){
+    //开始答题
     this.getMore();
     var num=this.data.num;
     if(this.data.isRun===true){
@@ -63,6 +66,7 @@ Page({
     }
   },
   getMore:function(){
+    //发送请求 请求后端数据
     if(this.data.isRun===true){
     var timer = setInterval(()=>{
       var id=this.data.id;
@@ -73,32 +77,81 @@ Page({
         url: url,
         data:{id},
         success:res=>{
-          // console.log(res.data);
           this.setData({
             list:res.data,
             id:id,
+            answer:res.data[0].anser,
+            myColor1:"#fff",
+            myColor2:"#fff",
           })
         }
       })
       }, 10000);
     }
   },
-  change1:function(){
-    console.log(1111);
-    var cc1="red";
-    this.setData({
-      myColor1:cc1,
-      isRun:false,
-    });
+  // isRight(){
+  //   //答案是否正确
+  //   var answer = e._relatedInfo.anchorTargetText;
+  //   if(this.data.answer==answer){
+  //     var cc1="green";
+  //     this.setData({
+  //       myColor1:cc1,
+  //       isRun:false,
+  //     });
+  //   }else{
+  //     var cc2="red";
+  //     this.setData({
+  //       myColor1:cc2,
+  //       isRun:false,
+  //     })
+  //   }
+  // },
+  change1:function(e){
+    //选项一
+    // this.isRight();
+    var answer = e._relatedInfo.anchorTargetText;
+    var num=this.data.score;
+    if(this.data.answer==answer){
+      num+=100;
+      var cc1="green";
+      this.setData({
+        myColor1:cc1,
+        isRun:false,
+        score:num,
+      });
+    }else{
+      num+=0;
+      var cc2="red";
+      this.setData({
+        myColor1:cc2,
+        isRun:false,
+        score:num,
+      })
+    }
     console.log(this.data.isRun);
   },
-  change2:function(){
-    console.log(2222);
-    var cc2="green";
-    this.setData({
-      myColor2:cc2,
-      isRun:false,
-    });
+  change2:function(e){
+    //选项二
+    var num=this.data.score;
+    // this.isRight();
+    var answer = e._relatedInfo.anchorTargetText;
+    if(this.data.answer==answer){
+      num+=100;
+      var cc1="green";
+      this.setData({
+        myColor2:cc1,
+        isRun:false,
+        score:num,
+      });
+    }else{
+      num+=0;
+      var cc2="red";
+      this.setData({
+        myColor2:cc2,
+        isRun:false,
+        score:num,
+      })
+    }
     console.log(this.data.isRun);
   },
   /**
