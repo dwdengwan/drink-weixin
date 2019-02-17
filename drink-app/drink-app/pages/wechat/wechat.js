@@ -12,9 +12,12 @@ Page({
     myColor:"green",//定时器的背景色
     myColor1:"#fff",//按钮一的背景色
     myColor2:"#fff",//按钮二的背景色
+    isBtn1:"",//是否禁止按下
+    isBtn2:"",
     isRun:true,//定时器是否在运行
     answer:"",//正确答案
     score:0,//分数
+    disable:true,
   },
   change:function(){
     //开始答题
@@ -68,26 +71,30 @@ Page({
   getMore:function(){
     //发送请求 请求后端数据
     if(this.data.isRun===true){
-    var timer = setInterval(()=>{
-      var id=this.data.id;
-      id=parseInt(Math.random()*20+1);
-      // console.log(id);
-      var url ="http://127.0.0.1:3000/getDdxq";
-      wx.request({
-        url: url,
-        data:{id},
-        success:res=>{
-          this.setData({
-            list:res.data,
-            id:id,
-            answer:res.data[0].anser,
-            myColor1:"#fff",
-            myColor2:"#fff",
-          })
-        }
-      })
+      for(var i=0;i<5;i++){
+        var timer = setInterval(()=>{
+        var id=this.data.id;
+        id=parseInt(Math.random()*20+1);
+        // console.log(id);
+        var url ="http://127.0.0.1:3000/getDdxq";
+        wx.request({
+          url: url,
+          data:{id},
+          success:res=>{
+            this.setData({
+              list:res.data,
+              id:id,
+              answer:res.data[0].anser,
+              myColor1:"#fff",
+              myColor2:"#fff",
+              isBtn1:"",
+              isBtn2:"",
+            })
+          }
+        })
       }, 10000);
     }
+  }
   },
   // isRight(){
   //   //答案是否正确
@@ -111,13 +118,16 @@ Page({
     // this.isRight();
     var answer = e._relatedInfo.anchorTargetText;
     var num=this.data.score;
+    this.data.isBtn1="";
     if(this.data.answer==answer){
-      num+=100;
       var cc1="green";
+      num+=100;
       this.setData({
         myColor1:cc1,
         isRun:false,
         score:num,
+        isBtn1:"disable",
+        isBtn2:"disable",
       });
     }else{
       num+=0;
@@ -126,6 +136,8 @@ Page({
         myColor1:cc2,
         isRun:false,
         score:num,
+        isBtn1:"disable",
+        isBtn2:"disable",
       })
     }
     console.log(this.data.isRun);
@@ -135,6 +147,7 @@ Page({
     var num=this.data.score;
     // this.isRight();
     var answer = e._relatedInfo.anchorTargetText;
+    this.data.isBtn2="";
     if(this.data.answer==answer){
       num+=100;
       var cc1="green";
@@ -142,6 +155,8 @@ Page({
         myColor2:cc1,
         isRun:false,
         score:num,
+        isBtn1:"disable",
+        isBtn2:"disable",
       });
     }else{
       num+=0;
@@ -150,6 +165,8 @@ Page({
         myColor2:cc2,
         isRun:false,
         score:num,
+        isBtn1:"disable",
+        isBtn2:"disable",
       })
     }
     console.log(this.data.isRun);

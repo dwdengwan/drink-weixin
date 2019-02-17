@@ -12,7 +12,7 @@
   <view class="score">分数:{{score}}</view>
   <view wx:for="{{list}}" wx:key="index" class="anser">
     <view class="question">问题：{{item.question}}</view>
-    <button class="anser1" bindtap='change1' style='background:{{myColor1}}'>{{item.anser1}}</button>
-    <button class="anser2" bindtap="change2" style='background:{{myColor2}}'>{{item.anser2}}</button>
+    <button class="anser1" bindtap='change1' style='background:{{myColor1}} {{isBtn1}}' >{{item.anser1}}</button>
+    <button class="anser2" bindtap="change2" style='background:{{myColor2}} {{isBtn2}}' >{{item.anser2}}</button>
   </view>
 </view>

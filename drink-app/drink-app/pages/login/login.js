@@ -14,7 +14,7 @@ Page({
   uphone(e){
     var uphone=parseInt(e.detail.value);
     var reg=/^1[3-8]\d{9}$/;
-    if(!uphone){
+    if(uphone==""){
       this.setData({msg1:"手机号码不能为空"})
     }
     else if(!reg.test(uphone)){
