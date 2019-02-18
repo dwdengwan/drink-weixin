@@ -119,6 +119,8 @@ Page({
     var answer = e._relatedInfo.anchorTargetText;
     var num=this.data.score;
     this.data.isBtn1="";
+    console.log(answer);
+    console.log(this.data.answer);
     if(this.data.answer==answer){
       var cc1="green";
       num+=100;
@@ -126,7 +128,7 @@ Page({
         myColor1:cc1,
         isRun:false,
         score:num,
-        isBtn1:"disable",
+        // isBtn1:"disable",
         isBtn2:"disable",
       });
     }else{
@@ -136,7 +138,7 @@ Page({
         myColor1:cc2,
         isRun:false,
         score:num,
-        isBtn1:"disable",
+        // isBtn1:"disable",
         isBtn2:"disable",
       })
     }
@@ -148,6 +150,8 @@ Page({
     // this.isRight();
     var answer = e._relatedInfo.anchorTargetText;
     this.data.isBtn2="";
+    console.log(answer);
+    console.log(this.data.answer);
     if(this.data.answer==answer){
       num+=100;
       var cc1="green";
@@ -156,7 +160,7 @@ Page({
         isRun:false,
         score:num,
         isBtn1:"disable",
-        isBtn2:"disable",
+        // isBtn2:"disable",
       });
     }else{
       num+=0;
@@ -166,7 +170,7 @@ Page({
         isRun:false,
         score:num,
         isBtn1:"disable",
-        isBtn2:"disable",
+        // isBtn2:"disable",
       })
     }
     console.log(this.data.isRun);
