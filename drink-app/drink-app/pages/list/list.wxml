@@ -1,7 +1,7 @@
 <!--pages/list/list.wxml-->
 <view>
   <!-- 轮播图 -->
-  <swiper autoplay='true' indicator-dots="true" vertical="true" class="slider">
+  <swiper autoplay='true' indicator-dots="true" indicator-color='rgba(0,255,0,0.8)' vertical="true" class="slider">
     <swiper-item wx:for="{{list1}}" wx:key="index">
       <image src="{{item.img_url}}" lazy-load='true' mode='aspectFill'></image>
     </swiper-item>

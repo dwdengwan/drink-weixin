@@ -19,6 +19,7 @@ Page({
     score:0,//分数
     scoreColor:'red',
     disable:true,
+    percent:0,//百分比
   },
   change:function(){
     //开始答题
@@ -71,8 +72,10 @@ Page({
   },
   getMore:function(){
     //发送请求 请求后端数据
+    var percent=this.data.percent;
     if(this.data.isRun===true){
       for(var i=0;i<5;i++){
+        percent+=20;
         var timer = setInterval(()=>{
         var id=this.data.id;
         id=parseInt(Math.random()*20+1);
@@ -90,9 +93,13 @@ Page({
               myColor2:"#fff",
               isBtn1:"",
               isBtn2:"",
+              percent:percent,
             })
           }
-        })
+        });
+        if(percent>100){
+          return;
+        }
       }, 6000);
     }
   }

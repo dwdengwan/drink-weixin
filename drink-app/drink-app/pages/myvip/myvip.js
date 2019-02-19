@@ -15,7 +15,7 @@ Page({
       count: 3,//最多选中一张
       sourceType: ["camera", "album"],//图片来源 相机 相册
       success:  res=>{
-        console.log(res.tempFilePaths[0]);
+        // console.log(res.tempFilePaths[0]);
         this.setData({
           img_url:res.tempFilePaths[0],
         })
