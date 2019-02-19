@@ -12,6 +12,6 @@
     <view class="item arrow">常见问题</view>
     <view class="item arrow">使用条款</view>
     <view class="divider"></view>
-    <view class="item arrow">设置</view>
+    <view class="item arrow" bindtap="setting">设置</view>
   </view>
 </view>

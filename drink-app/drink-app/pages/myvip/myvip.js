@@ -32,6 +32,11 @@ Page({
       url: '/pages/register/register',
     })
   },
+  setting(){
+    wx.navigateTo({
+      url:'/pages/verify/verify',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

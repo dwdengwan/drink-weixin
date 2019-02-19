@@ -8,7 +8,7 @@ Page({
     list:[],//题库
     id:0,
     isBegain:false,//游戏是否开始
-    num:9,//定时器的数字
+    num:5,//定时器的数字
     myColor:"green",//定时器的背景色
     myColor1:"#fff",//按钮一的背景色
     myColor2:"#fff",//按钮二的背景色
@@ -17,6 +17,7 @@ Page({
     isRun:true,//定时器是否在运行
     answer:"",//正确答案
     score:0,//分数
+    scoreColor:'red',
     disable:true,
   },
   change:function(){
@@ -25,13 +26,13 @@ Page({
     var num=this.data.num;
     if(this.data.isRun===true){
       var timer=setInterval(()=>{
-        if(num<10&&num>0){
+        if(num<6&&num>0){
           num--;
-          if(num>=7){
+          if(num>=4){
             this.setData({
               myColor:"green",
             })
-          }else if(num>=3){
+          }else if(num>=2){
           this.setData({
             myColor:"pink",
           })
@@ -42,7 +43,7 @@ Page({
           }
         }
         else {
-          num=9
+          num=5
         }
         this.setData({
           num: num,
@@ -92,7 +93,7 @@ Page({
             })
           }
         })
-      }, 10000);
+      }, 6000);
     }
   }
   },
@@ -113,32 +114,72 @@ Page({
   //     })
   //   }
   // },
+  // scoreColor:function(){
+  //   if(num>1000){
+  //     // this.setData({
+  //     //   score:num,
+  //     //   scoreColor:'red',
+  //     // })
+  //     scoreColor='red';
+  //   }else if(n>2000){
+  //     // this.setData({
+  //     //   score:num,
+  //     //   scoreColor:'yellow',
+  //     // })
+  //     scoreColor='yellow';
+  //   }else{
+  //     // this.setData({
+  //     //   score:num,
+  //     //   scoreColor:'green',
+  //     // })
+  //     scoreColor='green';
+  //   }
+  // },
   change1:function(e){
     //选项一
     // this.isRight();
     var answer = e._relatedInfo.anchorTargetText;
     var num=this.data.score;
+    var scoreColor=this.data.scoreColor;
     this.data.isBtn1="";
     console.log(answer);
     console.log(this.data.answer);
     if(this.data.answer==answer){
       var cc1="green";
       num+=100;
+      // this.scoreColor();
+      if(num<1000){
+        scoreColor='red';
+      }else if(num<2000){
+        scoreColor='pink';
+      }else{
+        scoreColor='green';
+      }
       this.setData({
         myColor1:cc1,
         isRun:false,
         score:num,
+        scoreColor:scoreColor,
         // isBtn1:"disable",
         isBtn2:"disable",
       });
     }else{
       num+=0;
       var cc2="red";
+      if(num<1000){
+        scoreColor='red';
+      }else if(num<2000){
+        scoreColor='pink';
+      }else{
+        scoreColor='green';
+      }
+      // this.scoreColor();
       this.setData({
         myColor1:cc2,
         isRun:false,
         score:num,
         // isBtn1:"disable",
+        scoreColor:scoreColor,
         isBtn2:"disable",
       })
     }
@@ -147,6 +188,7 @@ Page({
   change2:function(e){
     //选项二
     var num=this.data.score;
+    var scoreColor=this.data.scoreColor;
     // this.isRight();
     var answer = e._relatedInfo.anchorTargetText;
     this.data.isBtn2="";
@@ -154,22 +196,40 @@ Page({
     console.log(this.data.answer);
     if(this.data.answer==answer){
       num+=100;
+      // this.scoreColor();
+      if(num<1000){
+        scoreColor='red';
+      }else if(num<2000){
+        scoreColor='pink';
+      }else{
+        scoreColor='green';
+      }
       var cc1="green";
       this.setData({
         myColor2:cc1,
         isRun:false,
         score:num,
         isBtn1:"disable",
+        scoreColor:scoreColor,
         // isBtn2:"disable",
       });
     }else{
       num+=0;
+      // this.scoreColor();
+      if(num<1000){
+        scoreColor='red';
+      }else if(num<2000){
+        scoreColor='pink';
+      }else{
+        scoreColor='green';
+      }
       var cc2="red";
       this.setData({
         myColor2:cc2,
         isRun:false,
         score:num,
         isBtn1:"disable",
+        scoreColor:scoreColor,
         // isBtn2:"disable",
       })
     }

@@ -41,7 +41,7 @@ page{
   height: 80rpx;
   line-height: 80rpx;
   font-size: 60rpx;
-  color:red;
+  /* color:red; */
 }
 .card .anser1,.card .anser2{
   font-size: 60rpx;

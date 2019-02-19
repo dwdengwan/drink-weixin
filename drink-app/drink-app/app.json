@@ -9,7 +9,8 @@
     "pages/logs/logs",
     "pages/wechat/wechat",
     "pages/myvip/myvip",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/verify/verify"
   ],
   "window": {
     "backgroundTextStyle": "light",
