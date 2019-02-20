@@ -19,7 +19,7 @@ Page({
     score:0,//分数
     scoreColor:'red',
     disable:true,
-    percent:0,//百分比
+    // percent:0,//百分比
   },
   change:function(){
     //开始答题
