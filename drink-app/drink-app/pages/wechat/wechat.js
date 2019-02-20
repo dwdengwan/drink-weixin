@@ -104,44 +104,7 @@ Page({
     }
   }
   },
-  // isRight(){
-  //   //答案是否正确
-  //   var answer = e._relatedInfo.anchorTargetText;
-  //   if(this.data.answer==answer){
-  //     var cc1="green";
-  //     this.setData({
-  //       myColor1:cc1,
-  //       isRun:false,
-  //     });
-  //   }else{
-  //     var cc2="red";
-  //     this.setData({
-  //       myColor1:cc2,
-  //       isRun:false,
-  //     })
-  //   }
-  // },
-  // scoreColor:function(){
-  //   if(num>1000){
-  //     // this.setData({
-  //     //   score:num,
-  //     //   scoreColor:'red',
-  //     // })
-  //     scoreColor='red';
-  //   }else if(n>2000){
-  //     // this.setData({
-  //     //   score:num,
-  //     //   scoreColor:'yellow',
-  //     // })
-  //     scoreColor='yellow';
-  //   }else{
-  //     // this.setData({
-  //     //   score:num,
-  //     //   scoreColor:'green',
-  //     // })
-  //     scoreColor='green';
-  //   }
-  // },
+  
   change1:function(e){
     //选项一
     // this.isRight();
